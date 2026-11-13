@@ -1,0 +1,9 @@
+{
+  "schema": 1,
+  "id": "projecte",
+  "name": "ProjectE",
+  "version": "0.1.0",
+  "game": "26.3",
+  "horizon": "ba6344a59cb9e755b730dcf02285fc0d33b97d3c",
+  "mixins": "d9c83d7096b7ea5b83678da2efdfd6161f74997e"
+}

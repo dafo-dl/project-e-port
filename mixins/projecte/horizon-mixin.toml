@@ -1,0 +1,28 @@
+[mod]
+id = "projecte"
+version = "0.1.0"
+priority = 100
+
+[compatibility]
+horizon_revision = "ba6344a59cb9e755b730dcf02285fc0d33b97d3c"
+
+[[module]]
+id = "runtime"
+file = "crates/horizon-client/src/client_lib.rs"
+name = "projecte"
+source = "runtime.rs"
+visibility = "pub"
+
+[[injection]]
+id = "register-items"
+kind = "HEAD"
+target = "horizon_client::game::native_hooks::Game<'_>::native_items"
+helper = "items.rs"
+bindings = [{ name = "items", ty = "&mut Vec<horizon_mods::content::Item>", value = "items" }]
+
+[[injection]]
+id = "register-recipes"
+kind = "HEAD"
+target = "horizon_client::crafting::Recipes::from_sources"
+helper = "recipes.rs"
+bindings = [{ name = "sources", ty = "&mut Vec<(String, serde_json::Value)>", value = "&mut sources" }]
